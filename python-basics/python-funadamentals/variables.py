@@ -79,8 +79,8 @@ print(type(x))  # Output: <class 'str'>
 
 # Python is dynamically typed but strongly typed.
 
-result = "5" + 5
-print(result)  # This will raise a TypeError because you cannot concatenate a string and an integer.
+# result = "5" + 5
+# print(result)  # This will raise a TypeError because you cannot concatenate a string and an integer.
 
 #Traceback (most recent call last):
 #   File "/home/nav187/Learning/ai_learning/python-basics/python-funadamentals/variables.py", line 82, in <module>
@@ -89,3 +89,49 @@ print(result)  # This will raise a TypeError because you cannot concatenate a st
 
 result = int("5") + 5
 print(result)  # Output: 10
+
+# 6. Variable Naming Rules
+
+age = 20
+
+student_name = "John"
+
+_price = 500
+
+salary2025 = 1000
+
+
+#7. Reserved Keywords 
+
+import keyword
+
+print(keyword.kwlist)
+
+#['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+#8. Naming Conventions (PEP 8)
+
+# GOOD
+# student_name
+
+# total_price
+
+# employee_salary
+
+
+# BAD
+# StudentName
+# studentName
+
+# studentname1234567890
+
+
+#9. Variables are References
+
+# In Python, variables are references to objects in memory. When you assign a value to a variable, you are creating a reference to that object.
+
+a = 100
+
+b = a
+
+print(b)
