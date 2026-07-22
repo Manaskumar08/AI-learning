@@ -1,137 +1,224 @@
-definitions = [
-    "A variable is a name that refers to an object stored in memory.",
-]
+"""
+=========================================================
+                PYTHON FUNDAMENTALS - VARIABLES
+=========================================================
 
-# name is the variable.
-# "Manas" is the object.
-# = assigns the object to the variable.
+Topics
+------
+1. What is a Variable?
+2. Variable Assignment
+3. Multiple Assignment
+4. Dynamic Typing
+5. Strong Typing
+6. Variable Naming Rules
+7. Reserved Keywords
+8. Naming Conventions (PEP 8)
+9. Variables are References
+10. Memory References (id)
+11. type()
+12. Mutable vs Immutable
+13. PEP 8 Summary
+
+Author: Manas
+=========================================================
+"""
+
+# =========================================================
+# 1. What is a Variable?
+# =========================================================
+"""
+Definition
+----------
+A variable is a name that refers to an object stored in memory.
+"""
 
 name = "Manas"
-print(name)  # Output: Manas
+print(name)
 
+# =========================================================
 # 2. Variable Assignment
+# =========================================================
+"""
+Assignment means storing a value inside a variable.
 
-   # .Assignment means storing a value inside a variable.
-
+Syntax:
+variable_name = value
+"""
 age = 22
-
 price = 99.5
-
 name = "John"
-
 is_active = True
 
-print(age)        # Output: 22
-print(price)      # Output: 99.5
-print(name)       # Output: John
-print(is_active)  # Output: True
+print(age)
+print(price)
+print(name)
+print(is_active)
 
-
-#3. Multiple Assignments
-
-#Assign multiple variables
-a = 10
-b = 20
-c = 30
-
-print(a)  # Output: 10
-print(b)  # Output: 20
-print(c)  # Output: 30
-
-#Multiple assignment in one line
+# =========================================================
+# 3. Multiple Assignment
+# =========================================================
+a, b, c = 10, 20, 30
+print(a, b, c)
 
 x, y, z = 1, 2, 3
+print(x, y, z)
 
-print(x)  # Output: 1
-print(y)  # Output: 2
-print(z)  # Output: 3
-
-#Same value to multiple variables
-
-a = b = c = 100
-
-print(a)  # Output: 100
-print(b)  # Output: 100
-print(c)  # Output: 100
-
-#Swap variables
+p = q = r = 100
+print(p, q, r)
 
 a = 5
 b = 10
-
 a, b = b, a
+print(a, b)
 
-print(a)
-print(b)
-
-
-#4. Dynamic Typing
-
+# =========================================================
+# 4. Dynamic Typing
+# =========================================================
+"""
+Python is dynamically typed.
+A variable can reference objects of different types.
+"""
 x = 10
-
-print(type(x))  # Output: <class 'int'>
+print(type(x))
 
 x = "Python"
+print(type(x))
 
-print(type(x))  # Output: <class 'str'>
-
-#5. Strong Typing
-
-# Python is dynamically typed but strongly typed.
-
-# result = "5" + 5
-# print(result)  # This will raise a TypeError because you cannot concatenate a string and an integer.
-
-#Traceback (most recent call last):
-#   File "/home/nav187/Learning/ai_learning/python-basics/python-funadamentals/variables.py", line 82, in <module>
-#     result = "5" + 5
-# TypeError: can only concatenate str (not "int") to str
-
+# =========================================================
+# 5. Strong Typing
+# =========================================================
+"""
+Python does not automatically mix incompatible types.
+"""
 result = int("5") + 5
-print(result)  # Output: 10
+print(result)
 
+# =========================================================
 # 6. Variable Naming Rules
-
-age = 20
-
+# =========================================================
+"""
+Rules
+-----
+* Letters, digits and underscore allowed.
+* Cannot start with a digit.
+* Cannot contain spaces.
+* Cannot use Python keywords.
+"""
 student_name = "John"
-
 _price = 500
-
 salary2025 = 1000
 
-
-#7. Reserved Keywords 
-
+# =========================================================
+# 7. Reserved Keywords
+# =========================================================
 import keyword
-
 print(keyword.kwlist)
 
-#['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+# =========================================================
+# 8. Naming Conventions (PEP 8)
+# =========================================================
+"""
+Variables / Functions : snake_case
+Classes              : PascalCase
+Constants            : UPPER_CASE
+"""
 
-#8. Naming Conventions (PEP 8)
+MAX_SIZE = 100
 
-# GOOD
-# student_name
+class StudentRecord:
+    pass
 
-# total_price
+def calculate_total():
+    return 100
 
-# employee_salary
-
-
-# BAD
-# StudentName
-# studentName
-
-# studentname1234567890
-
-
-#9. Variables are References
-
-# In Python, variables are references to objects in memory. When you assign a value to a variable, you are creating a reference to that object.
-
+# =========================================================
+# 9. Variables are References
+# =========================================================
 a = 100
-
 b = a
+print(a, b)
 
-print(b)
+# =========================================================
+# 10. Memory References
+# =========================================================
+"""
+id() returns the identity of an object.
+"""
+name = "Python"
+print(id(name))
+
+a = 10
+b = 10
+print(id(a))
+print(id(b))
+
+list1 = [1,2,3]
+list2 = [1,2,3]
+print(id(list1))
+print(id(list2))
+
+# =========================================================
+# 11. type()
+# =========================================================
+print(type(10))
+print(type(3.14))
+print(type(True))
+print(type("Python"))
+print(type([1,2]))
+print(type((1,2)))
+print(type({1,2}))
+print(type({"a":1}))
+
+# =========================================================
+# 12. Mutable vs Immutable
+# =========================================================
+"""
+Immutable:
+int, float, bool, str, tuple, frozenset
+
+Mutable:
+list, dict, set
+"""
+
+text = "Python"
+print(id(text))
+text += "3"
+print(text)
+print(id(text))
+
+numbers = [1,2]
+print(id(numbers))
+numbers.append(3)
+print(numbers)
+print(id(numbers))
+
+# =========================================================
+# 13. PEP 8 Summary
+# =========================================================
+"""
+✔ 4-space indentation
+✔ snake_case for variables/functions
+✔ PascalCase for classes
+✔ UPPER_CASE for constants
+✔ Imports at top
+✔ Group imports
+✔ Maximum line length ~79 chars
+✔ Meaningful names
+✔ Spaces around operators
+"""
+
+# =========================================================
+# Interview Questions
+# =========================================================
+"""
+1. What is a variable?
+2. What is variable assignment?
+3. What is dynamic typing?
+4. What is strong typing?
+5. What does id() return?
+6. What does type() return?
+7. Difference between mutable and immutable objects?
+8. Why are variables references?
+9. What is PEP 8?
+10. Why should we follow PEP 8?
+"""
