@@ -118,9 +118,9 @@ print(keyword.kwlist)
 # 8. Naming Conventions (PEP 8)
 # =========================================================
 """
-Variables / Functions : snake_case
-Classes              : PascalCase
-Constants            : UPPER_CASE
+    Variables / Functions : snake_case
+    Classes              : PascalCase
+    Constants            : UPPER_CASE
 """
 
 MAX_SIZE = 100
